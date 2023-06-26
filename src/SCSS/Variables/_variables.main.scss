@@ -1,0 +1,17 @@
+@import "_colors.default.scss";
+
+
+// spacing
+$base-padding: 0.75rem !default;
+$base-margin: 0.75rem !default;
+
+// borders
+$base-border-thickness: 1px !default;
+$base-border-radius: 20px !default;
+
+// box-shadow
+$base-box-shadow: 1px 3px 5px rgba(0,0,0,0.1) !default;
+
+// font
+$base-font-size: 1rem;
+$base-line-height: 1.5;

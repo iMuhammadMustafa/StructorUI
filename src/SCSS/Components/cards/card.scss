@@ -1,0 +1,63 @@
+$card-border-thickness: $base-border-thickness;
+$card-border-radius: 0.5rem;
+$card-padding: $base-padding;
+$card-margin: $base-margin;
+$card-box-shadow: $base-box-shadow;
+$card-font-size: $base-font-size;
+$card-line-height: $base-line-height;
+
+.card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+
+  border: $card-border-thickness solid $secondary;
+  border-radius: $card-border-radius;
+  font-size: $card-font-size;
+
+  .card-body {
+    padding: $card-padding;
+    margin: $card-margin;
+  }
+  .card-header {
+    padding: $card-padding;
+    border-bottom: $card-border-thickness solid $secondary;
+    border-top-left-radius: $card-border-radius;
+    border-top-right-radius: $card-border-radius;
+  }
+  .card-title {
+    font-weight: bold;
+    margin: 0;
+    font-size: $card-font-size;
+  }
+  .card-subtitle {
+    color: $secondary;
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+    font-size: 1rem;
+  }
+  .card-text {
+    font-size: $card-font-size;
+  }
+  .card-link {
+    margin-right: 1rem;
+  }
+
+  .card-img-top {
+    max-width: 100%;
+    border-start-start-radius: $card-border-radius;
+    border-start-end-radius: $card-border-radius;
+
+    border-end-start-radius: 0;
+    border-end-end-radius: 0;
+  }
+  .card-img-bottom {
+    max-width: 100%;
+    border-end-start-radius: $card-border-radius;
+    border-end-end-radius: $card-border-radius;
+
+    border-start-start-radius: 0;
+    border-start-end-radius: 0;
+  }
+}

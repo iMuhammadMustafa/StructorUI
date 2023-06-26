@@ -3,11 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./index.scss" />
-    <title>Vite App</title>
+    <link rel="stylesheet" href="./src/SCSS/index.scss" />
+    <title>Structor UI</title>
   </head>
-  <body>
-    <div id="app" class="test">Hello World</div>
+  <body style="margin: 0px 20px">
+    <h2 style="text-align: center">Structor UI</h2>
+
+    <!--Colors-->
+    <!--Font Sizes-->
+    <!--Components-->
+    <h2 style="text-align: center">Components</h2>
+    <!--Cards-->
+    <h2 style="text-align: center">Cards</h2>
+    <div>
+      Cards are structured
+      <pre>
+        <code>
+          Card
+          ├── card-header 
+          ├── card-img-top 
+          │   ├── card-body
+          │   │   ├── card-title
+          │   │   ├── card-subtitle
+          │   │   ├── card-text
+          │   │   ├── card-link
+          │   │   └── ...
+          ├── card-img-bottom
+          └── ...
+        </code>
+      </pre>
+      Cards have no fixed width to start, so they'll naturally fill the full width of its parent element.
+    </div>
+    <div class="card" style="width: 20rem">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the bulk of the card's content.
+        </p>
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+
+    <pre>
+      <code>
+        &lt;div class="card"&gt;
+          &lt;div class="card-body"&gt;
+            &lt;h5 class="card-title"&gt;Card title&lt;/h5&gt;
+            &lt;h6 class="card-subtitle"&gt;Card subtitle&lt;/h6&gt;
+            &lt;p class="card-text"&gt;
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            &lt;/p&gt;
+            &lt;a href="#" class="card-link"&gt;Card link&lt;/a&gt;
+            &lt;a href="#" class="card-link"&gt;Another link&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;  
+      </code>
+    </pre>
+
+    <div class="card" style="max-width: 18rem">
+      <div class="card-header">Header</div>
+      <div class="card-body">
+        <h5 class="card-title">Primary card title</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the bulk of the card's content.
+        </p>
+      </div>
+    </div>
+    <pre>
+      <code>
+      &lt;div class="card"&gt;
+        &lt;div class="card-header"&gt;Header&lt;/div&gt;
+        &lt;div class="card-body"&gt;
+          &lt;h5 class="card-title"&gt;Primary card title&lt;/h5&gt;
+          &lt;p class="card-text"&gt;Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    </code>
+  </pre>
+
+    <div class="card" style="width: 18rem">
+      <img src="https://imuhammadmustafa.github.io/Portfolio/Assets/projects.jpg" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          This is a wider card with supporting text below as a natural lead-in to additional content. This content is a
+          little bit longer.
+        </p>
+        <p class="card-text"><small>Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+
+    <pre>
+      <code>
+        &lt;div class="card"&gt;
+          &lt;img src="...." class="card-img-top" alt="..." /&gt;
+          &lt;div class="card-body"&gt;
+            &lt;h5 class="card-title"&gt;Card title&lt;/h5&gt;
+            &lt;p class="card-text"&gt;
+              This is a wider card with supporting text below as a natural lead-in to additional content. This content is a
+              little bit longer.
+            &lt;/p&gt;
+            &lt;p class="card-text"&gt;&lt;small&gt;Last updated 3 mins ago&lt;/small&gt;&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </code>
+    </pre>
+
+    <!--Grid System-->
+    <!--Utilities-->
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>
