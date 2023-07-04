@@ -1,7 +1,9 @@
 @import "./_reset.css";
 
 //Variables & Functions
-@import "./variables/variables.main";
+@import "./Variables/_variables.main.scss";
+@import "./Variables/_colors.default.scss";
+@import "./Variables/_theme.main.scss";
 
 // Base & Layout
 

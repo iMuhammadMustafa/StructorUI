@@ -1,10 +1,10 @@
-$card-border-thickness: $base-border-thickness;
-$card-border-radius: 0.5rem;
-$card-padding: $base-padding;
-$card-margin: $base-margin;
-$card-box-shadow: $base-box-shadow;
-$card-font-size: $base-font-size;
-$card-line-height: $base-line-height;
+$card-border-thickness: $border-thickness-base;
+$card-border-radius: $border-radius-base;
+$card-padding: $padding-base;
+$card-margin: $margin-base;
+$card-box-shadow: $box-shadow-base;
+$card-font-size: $font-size-base;
+$card-line-height: $line-height-base;
 
 .card {
   display: flex;
@@ -22,20 +22,27 @@ $card-line-height: $base-line-height;
   .card-header {
     padding: $card-padding;
     border-bottom: $card-border-thickness solid $secondary;
-    border-top-left-radius: $card-border-radius;
-    border-top-right-radius: $card-border-radius;
+    border-start-start-radius: $card-border-radius;
+    border-start-end-radius: $card-border-radius;
+  }
+  .card-footer {
+    padding: $card-padding;
+    border-top: $card-border-thickness solid $secondary;
+    border-end-start-radius: $card-border-radius;
+    border-end-end-radius: $card-border-radius;
   }
   .card-title {
     font-weight: bold;
     margin: 0;
     font-size: $card-font-size;
+    line-height: $card-line-height + 0.3rem;
   }
   .card-subtitle {
     color: $secondary;
     margin-top: 0;
     margin-bottom: 0.25rem;
-    line-height: 1.2;
-    font-size: 1rem;
+    line-height: $card-line-height;
+    font-size: $card-font-size;
   }
   .card-text {
     font-size: $card-font-size;

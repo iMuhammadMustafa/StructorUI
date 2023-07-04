@@ -12,7 +12,7 @@
   */
 * {
   margin: 0;
-  line-height: calc(1em + 0.5rem);
+  line-height: calc(1em + 0.2rem);
 }
 /*
     3. Allow percentage-based heights in the application

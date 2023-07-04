@@ -1,17 +1,44 @@
-@import "_colors.default.scss";
-
-
 // spacing
-$base-padding: 0.75rem !default;
-$base-margin: 0.75rem !default;
+$padding-base: 0.75rem !default;
+$margin-base: 0.75rem !default;
 
 // borders
-$base-border-thickness: 1px !default;
-$base-border-radius: 20px !default;
+$border-thickness-base: 1px !default;
+$border-radius-base: 0.5rem !default;
 
 // box-shadow
-$base-box-shadow: 1px 3px 5px rgba(0,0,0,0.1) !default;
+$box-shadow-base: 1px 3px 5px rgba(0, 0, 0, 0.1) !default;
 
 // font
-$base-font-size: 1rem;
-$base-line-height: 1.5;
+$font-size-base: 1rem;
+$font-size-xs: $font-size-base * 0.75;
+$font-size-sm: $font-size-base * 0.875;
+$font-size-md: $font-size-base * 1.25;
+$font-size-lg: $font-size-base * 1.5;
+$font-size-xl: $font-size-base * 1.75;
+$line-height-base: 1.2rem;
+
+// grid-breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+) !default;
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+) !default;
+
+// Grid columns
+// Set the number of columns and specify the width of the gutters.
+$grid-columns: 12 !default;
+$grid-gutter-width: 1.5rem !default;
+$grid-row-columns: 6 !default;
+// Container padding
+$container-padding-x: $grid-gutter-width !default;
