@@ -6,8 +6,24 @@ $margin-base: 0.75rem !default;
 $border-thickness-base: 1px !default;
 $border-radius-base: 0.5rem !default;
 
+// scss-docs-start border-radius-variables
+$border-radius: 0.375rem !default;
+$border-radius-sm: 0.25rem !default;
+$border-radius-lg: 0.5rem !default;
+$border-radius-xl: 1rem !default;
+$border-radius-xxl: 2rem !default;
+$border-radius-pill: 50rem !default;
+// scss-docs-end border-radius-variables
+
 // box-shadow
 $box-shadow-base: 1px 3px 5px rgba(0, 0, 0, 0.1) !default;
+
+// scss-docs-start box-shadow-variables
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
+$box-shadow-lg: 0 1rem 3rem rgba($black, 0.175) !default;
+$box-shadow-inset: inset 0 1px 2px rgba($black, 0.075) !default;
+// scss-docs-end box-shadow-variables
 
 // font
 $font-size-base: 1rem;
@@ -17,6 +33,39 @@ $font-size-md: $font-size-base * 1.25;
 $font-size-lg: $font-size-base * 1.5;
 $font-size-xl: $font-size-base * 1.75;
 $line-height-base: 1.2rem;
+
+$font-weight-lighter: lighter !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: bolder !default;
+
+$font-weight-base: $font-weight-normal !default;
+
+$line-height-base: 1.5 !default;
+$line-height-sm: 1.25 !default;
+$line-height-lg: 2 !default;
+
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+// scss-docs-end font-variables
+
+// scss-docs-start font-sizes
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size,
+) !default;
+// scss-docs-end font-sizes
 
 // grid-breakpoints
 $grid-breakpoints: (
@@ -42,3 +91,17 @@ $grid-gutter-width: 1.5rem !default;
 $grid-row-columns: 6 !default;
 // Container padding
 $container-padding-x: $grid-gutter-width !default;
+
+$prefix: "stui" !default;
+
+// scss-docs-start spacer-variables-maps
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+) !default;
+// scss-docs-end spacer-variables-maps

@@ -1,13 +1,22 @@
 @import "./_reset.css";
 
-//Variables & Functions
-@import "./Variables/_variables.main.scss";
+//Variables
 @import "./Variables/_colors.default.scss";
 @import "./Variables/_theme.main.scss";
+@import "./Variables/_variables.main.scss";
 
+//Functions
+@import "./Utilities/_colors.utilities.scss";
 // Base & Layout
 
 // Colors
 // Components
 @import "./Components/cards/card.scss";
 // Utilities
+
+pre {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}

@@ -1,3 +1,4 @@
+@use "sass:map";
 // scss-docs-start theme-color-variables
 $primary: $blue !default;
 $secondary: $gray-600 !default;
@@ -20,4 +21,94 @@ $theme-colors: (
   "light": $light,
   "dark": $dark,
 ) !default;
+
+@function CreateThemeColorVariations() {
+  $colors: () !default;
+  $theme-color-light-variations: () !default;
+  $theme-color-dark-variations: () !default;
+
+  @for $variation from 1 through 9 {
+    $theme-color-light-variations: map.merge(
+      $theme-color-light-variations,
+      (
+        "primary-light-#{$variation}": mix($white, $primary, $variation * 10%),
+        "secondary-light-#{$variation}": mix($white, $secondary, $variation * 10%),
+        "success-light-#{$variation}": mix($white, $success, $variation * 10%),
+        "info-light-#{$variation}": mix($white, $info, $variation * 10%),
+        "warning-light-#{$variation}": mix($white, $warning, $variation * 10%),
+        "danger-light-#{$variation}": mix($white, $danger, $variation * 10%),
+      )
+    );
+
+    $theme-color-dark-variations: map.merge(
+      $theme-color-dark-variations,
+      (
+        "primary-dark-#{$variation}": mix($black, $primary, $variation * 10%),
+        "secondary-dark-#{$variation}": mix($black, $secondary, $variation * 10%),
+        "success-dark-#{$variation}": mix($black, $success, $variation * 10%),
+        "info-dark-#{$variation}": mix($black, $info, $variation * 10%),
+        "warning-dark-#{$variation}": mix($black, $warning, $variation * 10%),
+        "danger-dark-#{$variation}": mix($black, $danger, $variation * 10%),
+      )
+    );
+  }
+
+  $colors: map.merge($colors, $theme-colors);
+  $colors: map.merge($colors, $theme-color-light-variations);
+  $colors: map.merge($colors, $theme-color-dark-variations);
+  @return $colors;
+}
+
+// @for $variation from 1 through 9 {
+//   $theme-color-light-variations: (
+//     "primary-light-#{$variation}": mix($white, $primary, $variation * 10%),
+//     "secondary-light-#{$variation}": mix($white, $secondary, $variation * 10%),
+//     "success-light-#{$variation}": mix($white, $success, $variation * 10%),
+//     "info-light-#{$variation}": mix($white, $info, $variation * 10%),
+//     "warning-light-#{$variation}": mix($white, $warning, $variation * 10%),
+//     "danger-light-#{$variation}": mix($white, $danger, $variation * 10%),
+//   ) !default;
+
+//   $theme-color-dark-variations: (
+//     "primary-dark-#{$variation}": mix($black, $primary, $variation * 10%),
+//     "secondary-dark-#{$variation}": mix($black, $secondary, $variation * 10%),
+//     "success-dark-#{$variation}": mix($black, $success, $variation * 10%),
+//     "info-dark-#{$variation}": mix($black, $info, $variation * 10%),
+//     "warning-dark-#{$variation}": mix($black, $warning, $variation * 10%),
+//     "danger-dark-#{$variation}": mix($black, $danger, $variation * 10%),
+//   ) !default;
+// }
 // scss-docs-end theme-colors-map
+
+// scss-docs-start theme-text-variables
+$primary-text-emphasis: shade-color($primary, 60%) !default;
+$secondary-text-emphasis: shade-color($secondary, 60%) !default;
+$success-text-emphasis: shade-color($success, 60%) !default;
+$info-text-emphasis: shade-color($info, 60%) !default;
+$warning-text-emphasis: shade-color($warning, 60%) !default;
+$danger-text-emphasis: shade-color($danger, 60%) !default;
+$light-text-emphasis: $gray-700 !default;
+$dark-text-emphasis: $gray-700 !default;
+// scss-docs-end theme-text-variables
+
+// scss-docs-start theme-bg-subtle-variables
+$primary-bg-subtle: tint-color($primary, 80%) !default;
+$secondary-bg-subtle: tint-color($secondary, 80%) !default;
+$success-bg-subtle: tint-color($success, 80%) !default;
+$info-bg-subtle: tint-color($info, 80%) !default;
+$warning-bg-subtle: tint-color($warning, 80%) !default;
+$danger-bg-subtle: tint-color($danger, 80%) !default;
+$light-bg-subtle: mix($gray-100, $white) !default;
+$dark-bg-subtle: $gray-400 !default;
+// scss-docs-end theme-bg-subtle-variables
+
+// scss-docs-start theme-border-subtle-variables
+$primary-border-subtle: tint-color($primary, 60%) !default;
+$secondary-border-subtle: tint-color($secondary, 60%) !default;
+$success-border-subtle: tint-color($success, 60%) !default;
+$info-border-subtle: tint-color($info, 60%) !default;
+$warning-border-subtle: tint-color($warning, 60%) !default;
+$danger-border-subtle: tint-color($danger, 60%) !default;
+$light-border-subtle: $gray-200 !default;
+$dark-border-subtle: $gray-500 !default;
+// scss-docs-end theme-border-subtle-variables
