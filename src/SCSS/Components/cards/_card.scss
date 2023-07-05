@@ -1,10 +1,10 @@
-$card-border-thickness: $border-thickness-base;
-$card-border-radius: $border-radius-base;
-$card-padding: $padding-base;
-$card-margin: $margin-base;
-$card-box-shadow: $box-shadow-base;
-$card-font-size: $font-size-base;
-$card-line-height: $line-height-base;
+$card-border-thickness: $border-thickness-base; // 1px
+$card-border-radius: $border-radius-base; // 0.25rem;
+$card-padding: $padding-base; // 0.75rem;
+$card-margin: $margin-base; // 0.75rem;
+$card-box-shadow: $box-shadow-base; // 1 3rem 5rem rgba(0, 0, 0, 0.1);
+$card-font-size: $font-size-base; // 1rem;
+$card-line-height: $line-height-base; // 1.2rem;
 
 .card {
   display: flex;
