@@ -1,41 +1,20 @@
 @use "sass:math";
 
-@each $utilityName, $utility in $utilities {
-  @each $valueName, $value in map-get($utility, "values") {
-    @each $cssName in map-get($utility, "cssNames") {
-      .#{$utilityName}-#{$cssName}-#{$valueName} {
-        #{$cssName}: $value;
-      }
-    }
-  }
-}
-
-@each $utilityName, $utility in $utilities {
-  $cssNames: map-get($utility, "cssNames");
-  $prefix: map-get($utility, "prefix");
-  $values: map-get($utility, "values");
-  $baseValue: map-get($utility, "baseValue");
-}
-
 $utilities: (
   "padding": (
     "cssNames": (
       "padding",
-      "padding-left",
-      "padding-right",
+      "padding-inline-start",
+      "padding-inline-end",
       "padding-top",
       "padding-bottom",
-      "padding-x",
-      "padding-y",
     ),
     "prefix": (
       "p",
-      "pl",
-      "pr",
+      "ps",
+      "pe",
       "pt",
       "pb",
-      "px",
-      "py",
     ),
     "values": (
       "0": 0,
@@ -51,24 +30,20 @@ $utilities: (
   "margin": (
     "cssNames": (
       "margin",
-      "margin-left",
-      "margin-right",
+      "margin-inline-start",
+      "margin-inline-end",
       "margin-top",
       "margin-bottom",
-      "margin-x",
-      "margin-y",
     ),
     "prefix": (
       "m",
-      "ml",
-      "mr",
+      "ms",
+      "me",
       "mt",
       "mb",
-      "mx",
-      "my",
     ),
     "values": (
-      "0": "0",
+      "0": 0,
       "1": 1,
       "2": 2,
       "3": 4,
@@ -77,8 +52,90 @@ $utilities: (
     ),
     "baseValue": $margin-base,
   ),
+
+  "opacity": (
+    "cssNames": (
+      "opacity",
+    ),
+    "prefix": (
+      "o",
+    ),
+    "values": (
+      "0": 0,
+      "1": 0.1,
+      "2": 0.2,
+      "3": 0.3,
+      "4": 0.4,
+      "5": 0.5,
+      "6": 0.6,
+      "7": 0.7,
+      "8": 0.8,
+      "9": 0.9,
+      "10": 0.1,
+    ),
+    "baseValue": 100%,
+  ),
+  "font-size": (
+    "cssNames": (
+      "font-size",
+    ),
+    "prefix": (
+      "fs",
+    ),
+    "values": (
+      "xs": $font-size-xs,
+      "sm": $font-size-sm,
+      "base": $font-size-base,
+      "lg": $font-size-lg,
+      "xl": $font-size-xl,
+    ),
+    "baseValue": 1,
+  ),
 );
 
+@each $utilityName, $utility in $utilities {
+  $cssNames: map-get($utility, "cssNames");
+  $prefixes: map-get($utility, "prefix");
+  $values: map-get($utility, "values");
+  $baseValueModifier: map-get($utility, "baseValue");
+
+  $baseCssName: nth($cssNames, 1);
+  $basePrefix: nth($prefixes, 1);
+
+  @each $key, $val in $values {
+    .#{$basePrefix}x-#{$key} {
+      #{$baseCssName}-inline-start: $val * $baseValueModifier !important;
+      #{$baseCssName}-inline-end: $val * $baseValueModifier !important;
+      writing-mode: horizontal-tb;
+    }
+    .#{$basePrefix}y-#{$key} {
+      #{$baseCssName}-top: $val * $baseValueModifier !important;
+      #{$baseCssName}-bottom: $val * $baseValueModifier !important;
+      writing-mode: horizontal-tb;
+    }
+  }
+
+  @for $i from 1 through length($cssNames) {
+    $cssName: nth($cssNames, $i);
+    $prefix: nth($prefixes, $i);
+
+    @each $key, $val in $values {
+      .#{$prefix}-#{$key} {
+        #{$cssName}: $val * $baseValueModifier !important;
+      }
+    }
+  }
+}
+
+// @each $utilityName, $utility in $utilities {
+//   @each $valueName, $value in map-get($utility, "values") {
+//     @each $cssName in map-get($utility, "cssNames") {
+//       .#{$utilityName}-#{$cssName}-#{$valueName} {
+//         #{$cssName}: $value;
+//       }
+//     }
+//   }
+// }
 // $utilities: (
 //   "padding": (
 //     "prefix": "p",
