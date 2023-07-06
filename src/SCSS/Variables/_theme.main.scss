@@ -22,7 +22,7 @@ $theme-colors: (
   "dark": $dark,
 ) !default;
 
-@function CreateThemeColorVariations() {
+@function CreateThemeColorVariationsMap() {
   $colors: () !default;
   $theme-color-light-variations: () !default;
   $theme-color-dark-variations: () !default;
@@ -58,27 +58,6 @@ $theme-colors: (
   $colors: map.merge($colors, $theme-color-dark-variations);
   @return $colors;
 }
-
-// @for $variation from 1 through 9 {
-//   $theme-color-light-variations: (
-//     "primary-light-#{$variation}": mix($white, $primary, $variation * 10%),
-//     "secondary-light-#{$variation}": mix($white, $secondary, $variation * 10%),
-//     "success-light-#{$variation}": mix($white, $success, $variation * 10%),
-//     "info-light-#{$variation}": mix($white, $info, $variation * 10%),
-//     "warning-light-#{$variation}": mix($white, $warning, $variation * 10%),
-//     "danger-light-#{$variation}": mix($white, $danger, $variation * 10%),
-//   ) !default;
-
-//   $theme-color-dark-variations: (
-//     "primary-dark-#{$variation}": mix($black, $primary, $variation * 10%),
-//     "secondary-dark-#{$variation}": mix($black, $secondary, $variation * 10%),
-//     "success-dark-#{$variation}": mix($black, $success, $variation * 10%),
-//     "info-dark-#{$variation}": mix($black, $info, $variation * 10%),
-//     "warning-dark-#{$variation}": mix($black, $warning, $variation * 10%),
-//     "danger-dark-#{$variation}": mix($black, $danger, $variation * 10%),
-//   ) !default;
-// }
-// scss-docs-end theme-colors-map
 
 // scss-docs-start theme-text-variables
 $primary-text-emphasis: shade-color($primary, 60%) !default;

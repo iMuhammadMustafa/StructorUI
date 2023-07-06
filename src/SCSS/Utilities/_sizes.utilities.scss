@@ -1,0 +1,228 @@
+@use "sass:math";
+
+@each $utilityName, $utility in $utilities {
+  @each $valueName, $value in map-get($utility, "values") {
+    @each $cssName in map-get($utility, "cssNames") {
+      .#{$utilityName}-#{$cssName}-#{$valueName} {
+        #{$cssName}: $value;
+      }
+    }
+  }
+}
+
+@each $utilityName, $utility in $utilities {
+  $cssNames: map-get($utility, "cssNames");
+  $prefix: map-get($utility, "prefix");
+  $values: map-get($utility, "values");
+  $baseValue: map-get($utility, "baseValue");
+}
+
+$utilities: (
+  "padding": (
+    "cssNames": (
+      "padding",
+      "padding-left",
+      "padding-right",
+      "padding-top",
+      "padding-bottom",
+      "padding-x",
+      "padding-y",
+    ),
+    "prefix": (
+      "p",
+      "pl",
+      "pr",
+      "pt",
+      "pb",
+      "px",
+      "py",
+    ),
+    "values": (
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 4,
+      "4": 6,
+      "5": 8,
+    ),
+    "baseValue": $padding-base,
+  ),
+
+  "margin": (
+    "cssNames": (
+      "margin",
+      "margin-left",
+      "margin-right",
+      "margin-top",
+      "margin-bottom",
+      "margin-x",
+      "margin-y",
+    ),
+    "prefix": (
+      "m",
+      "ml",
+      "mr",
+      "mt",
+      "mb",
+      "mx",
+      "my",
+    ),
+    "values": (
+      "0": "0",
+      "1": 1,
+      "2": 2,
+      "3": 4,
+      "4": 6,
+      "5": 8,
+    ),
+    "baseValue": $margin-base,
+  ),
+);
+
+// $utilities: (
+//   "padding": (
+//     "prefix": "p",
+//     "values": (
+//       "0": "0",
+//       "1": $padding-base,
+//       "2": $padding-base * 2,
+//       "3": $padding-base * 4,
+//       "4": $padding-base * 6,
+//       "5": $padding-base * 8,
+//     ),
+//   ),
+//   "padding-left": (
+//     "prefix": "pl",
+//     "values": (
+//       "0": "0",
+//       "1": $padding-base,
+//       "2": $padding-base * 2,
+//       "3": $padding-base * 4,
+//       "4": $padding-base * 6,
+//       "5": $padding-base * 8,
+//     ),
+//   ),
+//   "padding-right": (
+//     "prefix": "pr",
+//     "values": (
+//       "0": "0",
+//       "1": $padding-base,
+//       "2": $padding-base * 2,
+//       "3": $padding-base * 4,
+//       "4": $padding-base * 6,
+//       "5": $padding-base * 8,
+//     ),
+//   ),
+//   "padding-top": (
+//     "prefix": "pt",
+//     "values": (
+//       "0": "0",
+//       "1": $padding-base,
+//       "2": $padding-base * 2,
+//       "3": $padding-base * 4,
+//       "4": $padding-base * 6,
+//       "5": $padding-base * 8,
+//     ),
+//   ),
+//   "padding-bottom": (
+//     "prefix": "pb",
+//     "values": (
+//       "0": "0",
+//       "1": $padding-base,
+//       "2": $padding-base * 2,
+//       "3": $padding-base * 4,
+//       "4": $padding-base * 6,
+//       "5": $padding-base * 8,
+//     ),
+//   ),
+//   "padding-x": (
+//     "prefix": "px",
+//     "values": (
+//       "0": "0",
+//       "1": $padding-base,
+//       "2": $padding-base * 2,
+//       "3": $padding-base * 4,
+//       "4": $padding-base * 6,
+//       "5": $padding-base * 8,
+//     ),
+//   ),
+//   "padding-y": (
+//     "prefix": "py",
+//     "values": (
+//       "0": "0",
+//       "1": $padding-base,
+//       "2": $padding-base * 2,
+//       "3": $padding-base * 4,
+//       "4": $padding-base * 6,
+//       "5": $padding-base * 8,
+//     ),
+//   ),
+
+//   "margin": (
+//     "prefix": "m",
+//     "values": (
+//       "0": "0",
+//       "1": $margin-base,
+//       "2": $margin-base * 2,
+//       "3": $margin-base * 4,
+//       "4": $margin-base * 6,
+//       "5": $margin-base * 8,
+//     ),
+//   ),
+//     "margin-left": (
+//         "prefix": "ml",
+//         "values": (
+//         "0": "0",
+//         "1": $margin-base,
+//         "2": $margin-base * 2,
+//         "3": $margin-base * 4,
+//         "4": $margin-base * 6,
+//         "5": $margin-base * 8,
+//         ),
+//     ),
+//     "margin-right": (
+//         "prefix": "mr",
+//         "values": (
+//         "0": "0",
+//         "1": $margin-base,
+//         "2": $margin-base * 2,
+//         "3": $margin-base * 4,
+//         "4": $margin-base * 6,
+//         "5": $margin-base * 8,
+//         ),
+//     ),
+//     "margin-top": (
+//         "prefix": "mt",
+//         "values": (
+//         "0": "0",
+//         "1": $margin-base,
+//         "2": $margin-base * 2,
+//         "3": $margin-base * 4,
+//         "4": $margin-base * 6,
+//         "5": $margin-base * 8,
+//         ),
+//     ),
+//     "margin-bottom": (
+//         "prefix": "mb",
+//         "values": (
+//         "0": "0",
+//         "1": $margin-base,
+//         "2": $margin-base * 2,
+//         "3": $margin-base * 4,
+//         "4": $margin-base * 6,
+//         "5": $margin-base * 8,
+//         ),
+//     ),
+//     "margin-x": (
+//         "prefix": "mx",
+//         "values": (
+//         "0": "0",
+//         "1": $margin-base,
+//         "2": $margin-base * 2,
+//         "3": $margin-base * 4,
+//         "4": $margin-base * 6,
+//         "5": $margin-base * 8,
+//         ),
+//     ),
+
+// );
