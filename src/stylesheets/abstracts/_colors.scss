@@ -1,0 +1,30 @@
+/*
+    The main/primary color 
+    → used for the links, the button background color, etc.  In general, it’s the main call-to-action color.
+    The accent color 
+    → used to highlight something important on the page. It shouldn’t be a variation of the primary color, but a complementary color.
+    A scale of neutral colors 
+    → It’s generally a scale of grayscale tones, to be used for text elements, subtle elements, borders, etc.
+    Feedback colors → success, error, warning.
+*/
+
+/// @module Theme Colors
+/// Sass variables for defining theme colors and feedback colors.
+/// @author Muhammad
+
+/// @type variable - The main/primary color used for links, buttons, etc.
+$primary: #0d6efd !default;
+/// @type variable - The accent color for highlighting important elements.
+$secondary: #6c757d !default;
+/// @type variable - Color indicating success or positive feedback.
+$success: #198754 !default;
+/// @type variable - Color indicating informational messages or neutral feedback.
+$info: #0dcaf0 !default;
+/// @type variable - Color indicating a warning or cautionary feedback.
+$warning: #ffc107 !default;
+/// @type variable - Color indicating errors or critical feedback.
+$danger: #dc3545 !default;
+/// @type variable - A light neutral color for backgrounds or subtle elements.
+$light: #f8f9fa !default;
+/// @type variable - A dark neutral color for text or borders.
+$dark: #212529 !default;
