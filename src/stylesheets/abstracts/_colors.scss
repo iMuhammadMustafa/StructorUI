@@ -8,9 +8,9 @@
     Feedback colors → success, error, warning.
 */
 
-/// @module Theme Colors
-/// Sass variables for defining theme colors and feedback colors.
-/// @author Muhammad
+// Theme Colors
+// Sass variables for defining theme colors and feedback colors.
+// @author Muhammad
 
 /// @type variable - The main/primary color used for links, buttons, etc.
 $primary: #0d6efd !default;
@@ -28,3 +28,5 @@ $danger: #dc3545 !default;
 $light: #f8f9fa !default;
 /// @type variable - A dark neutral color for text or borders.
 $dark: #212529 !default;
+
+$black: #000 !default;

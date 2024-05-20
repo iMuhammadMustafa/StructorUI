@@ -1,24 +1,15 @@
 @charset "UTF-8"; //Not sure why this is here TODO: research
 
+//Use to bring something into this file
+//@use path as something or as *
+//Forward to bring something into this file to export it out
+//@forward path
+
 //1. Import Reset CSS
+@use "./vendors/reset";
+
 //2. Import Abstracts: variables, functions, mixins
+@use "./abstracts";
+
 //3. Import Base: base, fonts, typography, helpers
-@use "base_Index";
-
-// 2. Vendors
-// @import "vendors/normalize";
-
-// // 3. Base stuff
-// @import "base/base", "base/fonts", "base/typography", "base/helpers";
-
-// // 4. Layout-related sections
-// @import "layout/header", "layout/footer";
-
-// // 5. Components
-// @import "components/button";
-
-// // 6. Page-specific styles
-// @import "pages/home";
-
-// // 7. Themes
-// @import "themes/default";
+@use "./base";
