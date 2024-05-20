@@ -1,0 +1,23 @@
+@use "sass:math";
+@use "../../abstracts" as *;
+
+.card {
+  display: block;
+  padding: $base-padding;
+  border: $border-width $border-style #ddd;
+  border-radius: $border-radius;
+
+  box-shadow: $box-shadow;
+
+  .title {
+    font-size: $font-size-base;
+    padding-bottom: $base-padding;
+    font-weight: bold;
+  }
+  .body {
+    font-size: $font-size-base;
+    a {
+      text-decoration: underline;
+    }
+  }
+}

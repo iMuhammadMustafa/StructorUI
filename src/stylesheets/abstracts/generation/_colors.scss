@@ -1,0 +1,57 @@
+@use "../maps/colors" as *;
+
+@each $key, $value in $colors {
+  .text-#{$key} {
+    color: $value;
+  }
+  .text-hover-#{$key} {
+    &:hover {
+      color: $value;
+    }
+  }
+  .bg-#{$key} {
+    background-color: $value;
+  }
+
+  //Lighter Variations
+  @for $i from 1 through 9 {
+    .text-#{$key}-light-#{$i} {
+      color: mix(white, $value, $i * 10%);
+    }
+    .text-hover-#{$key}-light-#{$i} {
+      &:hover {
+        color: mix(white, $value, $i * 10%);
+      }
+    }
+
+    .bg-#{$key}-light-#{$i} {
+      //   background-color: lighten($value, $i * 10%);
+      background-color: mix(white, $value, $i * 10%);
+    }
+  }
+
+  //Darker Variations
+  @for $i from 1 through 9 {
+    .text-#{$key}-dark-#{$i} {
+      color: mix(black, $value, $i * 10%);
+    }
+    .text-hover-#{$key}-dark-#{$i} {
+      &:hover {
+        color: mix(black, $value, $i * 10%);
+      }
+    }
+    .bg-#{$key}-dark-#{$i} {
+      background-color: mix(black, $value, $i * 10%);
+    }
+  }
+
+  //Transparent Variations
+  @for $i from 1 through 9 {
+    .text-#{$key}-transparent-#{$i} {
+      color: rgba($value, $i * 10%);
+    }
+    .bg-#{$key}-transparent-#{$i} {
+      background-color: rgba($value, $i * 10%);
+    }
+  }
+}
