@@ -29,3 +29,10 @@
 @function font($path, $base: $base-url) {
   @return asset($base, "fonts/", $path);
 }
+
+@function light-comp($color) {
+  $complement: complement($color);
+  $light-comp: lighten($complement, 30%);
+
+  @return $light-comp;
+}

@@ -1,3 +1,54 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the button component.
-// -----------------------------------------------------------------------------
+@use "../abstracts/" as *;
+
+@mixin btn($bg-color: default) {
+  padding: $base-padding $base-padding * 2;
+  border-radius: $border-radius * 4;
+
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+
+  transition: background-color 0.3s;
+
+  background-color: $bg-color;
+}
+
+.btn {
+  @include btn;
+}
+
+@each $key, $value in $colors {
+  .btn-#{$key} {
+    @include btn($value);
+
+    border: none;
+
+    &:hover {
+      background-color: darken($value, 10%);
+    }
+  }
+
+  .btn-outline-#{$key} {
+    @include btn(transparent);
+
+    color: $value;
+    border: $border-width solid $value;
+
+    &:hover {
+      background-color: $value;
+      color: $white;
+    }
+  }
+
+  .btn-complmenet-#{$key} {
+    @include btn($value);
+    border: none;
+
+    color: light-comp($value);
+
+    &:hover {
+      color: $value;
+      background-color: light-comp($value);
+    }
+  }
+}
