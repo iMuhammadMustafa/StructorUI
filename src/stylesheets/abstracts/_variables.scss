@@ -1,8 +1,7 @@
 @use "colors";
-@forward "./variables/font";
-@forward "./variables/border";
-@forward "./variables/spacing";
-
+@forward "variables/font";
+@forward "variables/border";
+@forward "variables/spacing";
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
