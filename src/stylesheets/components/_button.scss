@@ -2,7 +2,7 @@
 
 @mixin btn($bg-color: default) {
   padding: $base-padding $base-padding * 2;
-  border-radius: $border-radius * 4;
+  // border-radius: $border-radius * 4;
 
   text-decoration: none;
   cursor: pointer;
