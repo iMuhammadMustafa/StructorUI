@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="./src/stylesheets/index.scss" />
+  </head>
+
+  <body style="display: flex; flex-direction: column; justify-content: center">
+    <nav class="navbar mb-4">
+      <div class="container">
+        <h2 class="title">StructorUI</h2>
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <h2>Colors</h2>
+    <div class="m-auto">
+      <span class="text-primary">Primary </span> | <span class="text-secondary">Secondary </span> |
+      <span class="text-success">Success </span> | <span class="text-danger">Danger </span> |
+      <span class="text-warning">Warning </span> | <span class="text-info">Info </span> |
+      <span class="text-light">Light </span>
+      |
+      <span class="text-dark">Dark </span>
+    </div>
+
+    <h2>Background Colors</h2>
+    <div class="m-auto">
+      <span class="bg-primary">Primary </span> | <span class="bg-secondary">Secondary </span> |
+      <span class="bg-success">Success </span> | <span class="bg-danger">Danger </span> |
+      <span class="bg-warning">Warning </span> | <span class="bg-info">Info </span> |
+      <span class="bg-light">Light </span> |
+      <span class="bg-dark text-light">Dark </span>
+    </div>
+
+    <h3>Light and Dark Variations</h3>
+    <div class="m-auto">
+      <span class="bg-primary-light-1 text-dark">Light 1 </span> |
+      <span class="bg-primary-light-2 text-dark">Light 2 </span> |
+      <span class="bg-primary-light-3 text-dark">Light 3 </span> |
+      <span class="bg-primary-light-4 text-dark">Light 4 </span> |
+      <span class="bg-primary-light-5 text-dark">Light 5 </span> |
+      <span class="bg-primary-light-6 text-dark">Light 6 </span> |
+      <span class="bg-primary-light-7 text-dark">Light 7 </span> |
+      <span class="bg-primary-light-8 text-dark">Light 8 </span> |
+      <span class="bg-primary-light-9 text-dark">Light 9 </span>
+    </div>
+    <div class="m-auto">
+      <span class="bg-primary-dark-1 text-light">Dark 1 </span> |
+      <span class="bg-primary-dark-2 text-light">Dark 2 </span> |
+      <span class="bg-primary-dark-3 text-light">Dark 3 </span> |
+      <span class="bg-primary-dark-4 text-light">Dark 4 </span> |
+      <span class="bg-primary-dark-5 text-light">Dark 5 </span> |
+      <span class="bg-primary-dark-6 text-light">Dark 6 </span> |
+      <span class="bg-primary-dark-7 text-light">Dark 7 </span> |
+      <span class="bg-primary-dark-8 text-light">Dark 8 </span> |
+      <span class="bg-primary-dark-9 text-light">Dark 9 </span>
+    </div>
+
+    <hr style="width: 100%" class="my-2" />
+
+    <h2>Buttons</h2>
+
+    <h3>Buttons Color</h3>
+    <div class="m-auto">
+      <button class="btn">Default</button>
+      <button class="btn-primary">Primary</button>
+      <button class="btn-secondary">Secondary</button>
+      <button class="btn-success">Success</button>
+      <button class="btn-danger">Danger</button>
+      <button class="btn-warning">Warning</button>
+      <button class="btn-info">Info</button>
+      <button class="btn-light">Light</button>
+      <button class="btn-dark">Dark</button>
+    </div>
+    <h3>Buttons Outline</h3>
+    <div class="m-auto">
+      <button class="btn-outline-primary">Primary</button>
+      <button class="btn-outline-secondary">Secondary</button>
+      <button class="btn-outline-success">Success</button>
+      <button class="btn-outline-danger">Danger</button>
+      <button class="btn-outline-warning">Warning</button>
+      <button class="btn-outline-info">Info</button>
+      <button class="btn-outline-light">Light</button>
+      <button class="btn-outline-dark">Dark</button>
+    </div>
+
+    <hr style="width: 100%" class="my-2" />
+
+    <h2>Utilties</h2>
+    <h3>Border Radius</h3>
+    <div class="m-auto text-dark">
+      <button class="btn-outline-primary text-dark br">Default</button>
+      <button class="btn-outline-primary text-dark br-none">None</button>
+      <button class="btn-outline-primary text-dark br-xs">xSmall</button>
+      <button class="btn-outline-primary text-dark br-sm">Small</button>
+      <button class="btn-outline-primary text-dark br-lg">Large</button>
+      <button class="btn-outline-primary text-dark br-xl">xLarge</button>
+      <button class="btn-outline-primary text-dark br-xxl">xxLarge</button>
+      <button class="btn-outline-primary text-dark br-pill">Pill Radius</button>
+      <button class="btn-outline-primary text-dark br-full">Full Circle</button>
+    </div>
+
+    <h3>Padding</h3>
+    <div class="m-auto">
+      <span style="border: 1px solid teal" class="p-0">Padding 0</span> |
+      <span style="border: 1px solid teal" class="p-1">Padding 1</span> |
+      <span style="border: 1px solid teal" class="p-2">Padding 2</span> |
+      <span style="border: 1px solid teal" class="px-1">PaddingX 1</span> |
+      <span style="border: 1px solid teal" class="px-2">PaddingX 2</span> |
+      <span style="border: 1px solid teal" class="py-1">PaddingY 1</span> |
+      <span style="border: 1px solid teal" class="py-2">PaddingY 2</span>
+    </div>
+    <h3>Margin</h3>
+    <div class="m-auto">
+      <span style="border: 1px solid black; display: inline-block">
+        <span style="border: 1px solid teal; display: inline-block" class="m-0">Margin 0</span>
+      </span>
+      |
+      <span style="border: 1px solid black; display: inline-block">
+        <span style="border: 1px solid teal; display: inline-block" class="m-1">Margin 1</span>
+      </span>
+      |
+      <span style="border: 1px solid black; display: inline-block">
+        <span style="border: 1px solid teal; display: inline-block" class="m-2">Margin 2</span>
+      </span>
+      |
+      <span style="border: 1px solid black; display: inline-block">
+        <span style="border: 1px solid teal; display: inline-block" class="mx-1">MarginX 1</span>
+      </span>
+      |
+      <span style="border: 1px solid black; display: inline-block">
+        <span style="border: 1px solid teal; display: inline-block" class="mx-2">MarginX 2</span>
+      </span>
+      |
+      <span style="border: 1px solid black; display: inline-block">
+        <span style="border: 1px solid teal; display: inline-block" class="my-1">MarginY 1</span>
+      </span>
+      |
+      <span style="border: 1px solid black; display: inline-block">
+        <span style="border: 1px solid teal; display: inline-block" class="my-2">MarginY 2</span>
+      </span>
+    </div>
+
+    <h3>Font Sizes</h3>
+    <div class="m-auto">
+      <span class="fs-sm">Font Size xm</span> | <span class="fs-md">Font Size md</span> |
+      <span class="fs-lg">Font Size lg</span> | <span class="fs-xl">Font Size xl</span> |
+      <span class="fs-xxl">Font Size xxl</span>
+    </div>
+
+    <h2>Grid System</h2>
+    <div class="container">
+      <div class="row gap-1 justify-center">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card">
+            <div class="title">Card 1</div>
+            <div class="body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, vero odit alias nobis a in sed nihil,
+              possimus perspiciatis iusto adipisci id similique et laboriosam aliquam. Beatae perferendis nam ex!
+              <a href="#">Demo</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card">
+            <div class="title">Card 2</div>
+            <div class="body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, vero odit alias nobis a in sed nihil,
+              possimus perspiciatis iusto adipisci id similique et laboriosam aliquam. Beatae perferendis nam ex!
+              <a href="#">Demo</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card">
+            <div class="title">Card 2</div>
+            <div class="body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, vero odit alias nobis a in sed nihil,
+              possimus perspiciatis iusto adipisci id similique et laboriosam aliquam. Beatae perferendis nam ex!
+              <a href="#">Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr style="width: 100%" class="my-2" />
+    <h2>Cards</h2>
+    <div style="margin: auto; width: 25%">
+      <div class="card">
+        <div class="title">Card title</div>
+        <div class="body">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, vero odit alias nobis a in sed nihil,
+          possimus perspiciatis iusto adipisci id similique et laboriosam aliquam. Beatae perferendis nam ex!
+          <a href="#">Demo</a>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

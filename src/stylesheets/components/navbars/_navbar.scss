@@ -1,0 +1,43 @@
+@use "../../abstracts" as *;
+
+%flex-layout {
+  width: 100%;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar {
+  @extend %flex-layout;
+
+  position: sticky;
+  top: 0;
+
+  padding: $base-padding $base-padding * 2;
+  box-shadow: $box-shadow;
+
+  .container {
+    @extend %flex-layout;
+  }
+
+  .title {
+    font-size: $font-size-lg;
+  }
+
+  .nav {
+    @extend .flex-row;
+    gap: 10px;
+  }
+}
+
+@each $key, $value in $colors {
+  .navbar-#{$key} {
+    @extend .navbar;
+    background-color: $value;
+  }
+}

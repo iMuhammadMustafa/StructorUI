@@ -1,0 +1,31 @@
+@use "../maps/utilities" as *;
+
+@mixin generate-css($class, $properties, $value, $suffix: null) {
+  .#{$class}#{$suffix} {
+    @if (type-of($properties) == "list") {
+      @each $prop in $properties {
+        #{$prop}: $value;
+      }
+    } @else {
+      #{$properties}: $value;
+    }
+  }
+}
+
+@each $key, $utility in $utilities {
+  $class: map-get($utility, class);
+  $properties: map-get($utility, properties);
+  $values: map-get($utility, values);
+
+  @each $value-key, $value in $values {
+    @if ($value-key == "default") {
+      @include generate-css($class, $properties, $value);
+    } @else {
+      @include generate-css($class, $properties, $value, "-#{$value-key}");
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
