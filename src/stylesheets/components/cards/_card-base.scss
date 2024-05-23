@@ -10,12 +10,12 @@
   box-shadow: $box-shadow;
 
   .title {
-    font-size: $font-size-base;
+    font-size: $font-size;
     padding-bottom: $base-padding;
     font-weight: bold;
   }
   .body {
-    font-size: $font-size-base;
+    font-size: $font-size;
     a {
       text-decoration: underline;
     }
