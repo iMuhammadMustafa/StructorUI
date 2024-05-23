@@ -1,9 +1,9 @@
 $breakpoints: (
-  "xs": 0,
-  "sm": 480px,
-  "md": 720px,
-  "lg": 960px,
-  "xl": 1200px,
+  xs: 0,
+  sm: 480px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px,
 ) !default;
 
 @mixin xs {
@@ -49,17 +49,23 @@ $breakpoints: (
 }
 
 // @each $breakpoint, $value in $breakpoints {
-//   @if $value == 0 {
-//     @mixin #{$breakpoint} {
-//       @media (max-width: map-get($breakpoints, nth(map-keys($breakpoints), index(map-keys($breakpoints), $breakpoint) + 1))) {
-//         @content;
-//       }
-//     }
-//   } @else {
-//     @mixin #{$breakpoint} {
-//       @media (min-width: $value) {
-//         @content;
-//       }
+//   @mixin #{$breakpoint} {
+//     @media (min-width: map-get($breakpoints, $value)) {
+//       @content;
 //     }
 //   }
+
+//   // @if $value == 0 {
+//   //   @mixin #{$breakpoint} {
+//   //     @media (max-width: map-get($breakpoints, nth(map-keys($breakpoints), index(map-keys($breakpoints), $breakpoint) + 1))) {
+//   //       @content;
+//   //     }
+//   //   }
+//   // } @else {
+//   //   @mixin #{$breakpoint} {
+//   //     @media (min-width: $value) {
+//   //       @content;
+//   //     }
+//   //   }
+//   // }
 // }
